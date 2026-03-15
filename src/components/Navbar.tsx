@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg transition-transform group-hover:scale-110">
+            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-white font-bold text-lg transition-transform group-hover:scale-110">
               W
             </div>
             <span className="text-xl font-bold gradient-text">WGfinder</span>
@@ -43,7 +43,7 @@ export default function Navbar() {
                   Dashboard
                 </Link>
                 <div className="ml-2 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-sm font-semibold">
+                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-sm font-semibold">
                     {session.user?.name?.[0]?.toUpperCase() || "U"}
                   </div>
                   <button

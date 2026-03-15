@@ -5,18 +5,14 @@ export default function Home() {
     <div className="relative">
       {/* Hero Section */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-[120px] animate-float" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/8 rounded-full blur-[150px] animate-float" style={{ animationDelay: "2s" }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[200px]" />
-        </div>
+        {/* Background Effects Removed */}
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center max-w-4xl mx-auto">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-fade-in-up">
               <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
+              <span className="text-sm font-semibold border-r border-border pr-3">Live</span>
               <span className="text-sm text-text-muted">Über 1.000+ aktive Inserate</span>
             </div>
 
@@ -108,7 +104,7 @@ export default function Home() {
               },
             ].map((feature) => (
               <div key={feature.title} className="glass rounded-2xl p-8 card-hover group">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-2xl bg-surface-lighter flex items-center justify-center text-primary border border-border mb-6 group-hover:scale-110 transition-transform">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
@@ -122,8 +118,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-24 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="glass rounded-3xl p-12 relative overflow-hidden animate-pulse-glow">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary" />
+          <div className="glass rounded-3xl p-12 relative overflow-hidden">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               Bereit loszulegen?
             </h2>
