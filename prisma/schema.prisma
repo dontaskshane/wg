@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id           String        @id @default(cuid())
+  name         String
+  email        String        @unique
+  password     String
+  bio          String?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  listings     Listing[]
+  applications Application[]
+}
+
+model Listing {
+  id           String        @id @default(cuid())
+  title        String
+  description  String
+  price        Float
+  location     String
+  roomType     String        @default("WG-Zimmer")
+  size         Float?
+  availableFrom DateTime?
+  imageUrl     String?
+  furnished    Boolean       @default(false)
+  active       Boolean       @default(true)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  landlordId   String
+  landlord     User          @relation(fields: [landlordId], references: [id], onDelete: Cascade)
+  applications Application[]
+}
+
+model Application {
+  id          String   @id @default(cuid())
+  message     String
+  status      String   @default("pending")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  applicantId String
+  applicant   User     @relation(fields: [applicantId], references: [id], onDelete: Cascade)
+  listingId   String
+  listing     Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
+}
